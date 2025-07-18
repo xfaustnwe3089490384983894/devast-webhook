@@ -1,14 +1,10 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI
 
 app = FastAPI()
 
 @app.post("/devast")
-async def handle_webhook(request: Request):
-    data = await request.json()
-    print("Получено от игры:", data)
-
-    return JSONResponse({
+async def webhook():
+    return {
         "type": "commands",
-        "content": ["move", "attack"]
-    })
+        "content": ["jump", "run"]
+    }
