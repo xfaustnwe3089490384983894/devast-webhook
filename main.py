@@ -6,5 +6,7 @@ app = FastAPI()
 async def webhook():
     return {
         "type": "commands",
-        "content": ["jump", "run"]
+        "content": ["jump", "run"],
+        "type": "filter",
+        "content": {"players": [{"gid": 1}]}
     }
