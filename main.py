@@ -9,8 +9,6 @@ async def health_check():
 @app.post("/devast")
 async def webhook():
     return {
-        "type": "commands",
-        "content": ["jump", "run"],
-        "type": "filter",
-        "content": {"players": [{"gid": 1}]}
+        "commands": ["jump", "run"],
+        "filter": {"players": [{"gid": 1}]}
     }
